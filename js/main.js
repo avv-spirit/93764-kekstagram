@@ -1,14 +1,20 @@
 'use strict';
+// Подсчет ссылок
+var amountNumbers = 25;
+var arrayNumbers = [];
+for (var i = 0; i <= amountNumbers; i++) {
+  i;
+  var photosUrl = 'photos/' + i + '.jpg'
+  arrayNumbers.push(photosUrl)
+};
 // функция получения какого-то числа
 var toGetNumber = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
-// какое-то число лайков, переменную приравниваем к рандомному числу//
-var likes = toGetNumber(15, 200);
+var someLikes = toGetNumber(15, 200); // какое-то число лайков, переменную приравниваем к рандомному числу//
 // массив имен
 var arrayNames = ['Alex', 'Kate', 'Dadd', 'Todd', 'Mark', 'Jon', 'Vlad', 'Petr', 'Rodd', 'Sten', 'Loki', 'Vasya', 'Petya', 'Ann', 'Sofi', 'Elsa', 'Erl', 'Gray', 'Tedd', 'Jorn', 'Lande', 'Axel', 'Volker', 'Mike', 'John'];
-// подсчёт имен
-var toGetName = function (arrayNames) {
+var toGetName = function (arrayNames) { // подсчёт имен
   var number = toGetNumber(0, arrayNames.length);
   var names = arrayNames[number];
   return names;
@@ -16,23 +22,35 @@ var toGetName = function (arrayNames) {
 var amountNames = 25;
 var namesArray = [];
 for (var i = 0; i <= amountNames; i++) {
-  var name = toGetName();
+  var name = toGetName(arrayNames);
   namesArray.push(name);
-}
-// массив комментариев
-var arrayComments = ['Всё отлично!', 'В целом всё неплохо. Но не всё.'];
-var calculateComments = toGetNumber(0, 1);
+};
+//--------------------
+var arrayComments = ['Всё отлично!', 'В целом всё неплохо. Но не всё.']; // Массив комментариев
+//--------------------
+var calculateComments = toGetNumber(0, 2); // Подсчет комментариев
 var comment = arrayComments[calculateComments];
-// Подсчет ссылок
-var url = 'photos/' + toGetNumber(0, 25) + '.jpg';
-// Объект
-var users = Math.random({'avatar: ' + url, 'comment: ' + comment, 'name: ' + namesArray});
-/*
-var calculateAvatars = function (avatars) {
-  var userAvatar = 0;
-  for ( var i = 1; i <= avatars.length; i++) {
-    userAvatar += avatars[i];
-  }
-  return userAvatar;
-}
-*/
+//--------------------
+//var url = 'photos/' + toGetNumber(0, 24) + '.jpg'; // Подсчет ссылок
+var amount = 6;
+var namesAvatars = [];
+for(var i = 0; i <= amount; i++) {
+  i;
+  var avatars = 'img/avatar-' + i + '.svg'; // Подсчет аватаров
+  namesAvatars.push(avatars);
+};
+var photosArray = []; //Пустой массив, который мы будем заполнять цифрами
+for(var i = 0; i < amount; i++) { //Задаем цикл нужной длинны.
+  name = toGetNumber(); // Генерируем новое имя и записываем его в переменную name
+  photosArray.push(name); //Записываем сгенерированное имя в массив.
+};
+//--------------------
+//var array = []
+//for
+var usersNames = {
+  name: namesArray[toGetNumber(0, arrayNames.length)],
+  avatar: namesAvatars[toGetNumber(0, namesAvatars.length)],
+  url: arrayNumbers[1],
+  likes: toGetNumber(15, 200),
+  comments: arrayComments[toGetNumber(0, arrayComments.length)]
+};
