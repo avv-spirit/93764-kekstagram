@@ -44,13 +44,34 @@ for(var i = 0; i < amount; i++) { //Задаем цикл нужной длин�
   name = toGetNumber(); // Генерируем новое имя и записываем его в переменную name
   photosArray.push(name); //Записываем сгенерированное имя в массив.
 };
+// объект комментариев
+var commentsObject = [
+  'avatars: ' + namesAvatars[toGetNumber(0, namesAvatars.length)],
+  'comments: ' + arrayComments[toGetNumber(0, arrayComments.length)],
+  'name: ' + namesArray[toGetNumber(0, arrayNames.length)]
+];
+// переменная с описанием пользователя
+var usersNames = {
+  url: arrayNumbers[1],
+  likes: toGetNumber(15, 200),
+  comments: commentsObject
+};
+// массив для 25 объектов
+var amountObjects = 25;
+var arrayObjects = [];
+for (var i = 0; i < amountObjects.length; i++) {
+  usersNames = i;
+  //usersNames = toGetNumber(0, amountObjects.length);
+  arrayObjects.push(usersNames);
+};
 //--------------------
 //var array = []
 //for
-var usersNames = {
+/*var usersNames = {
   name: namesArray[toGetNumber(0, arrayNames.length)],
   avatar: namesAvatars[toGetNumber(0, namesAvatars.length)],
   url: arrayNumbers[1],
   likes: toGetNumber(15, 200),
   comments: arrayComments[toGetNumber(0, arrayComments.length)]
 };
+*/
