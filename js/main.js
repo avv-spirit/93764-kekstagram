@@ -45,16 +45,16 @@ for(var i = 0; i < amount; i++) { //Задаем цикл нужной длин�
   photosArray.push(name); //Записываем сгенерированное имя в массив.
 };
 // объект комментариев
-var commentsObject = [
-  'avatars: ' + namesAvatars[toGetNumber(0, namesAvatars.length)],
-  'comments: ' + arrayComments[toGetNumber(0, arrayComments.length)],
-  'name: ' + namesArray[toGetNumber(0, arrayNames.length)]
+var commentsArray = [
+  {avatars: namesAvatars[toGetNumber(0, namesAvatars.length)]},
+  {comments: arrayComments[toGetNumber(0, arrayComments.length)]},
+  {name: namesArray[toGetNumber(0, arrayNames.length)]}
 ];
 // переменная с описанием пользователя
 var usersNames = {
   url: arrayNumbers[1],
   likes: toGetNumber(15, 200),
-  comments: commentsObject
+  comments: commentsArray
 };
 // массив для 25 объектов
 var amountObjects = 25;
@@ -75,3 +75,13 @@ for (var i = 0; i < amountObjects.length; i++) {
   comments: arrayComments[toGetNumber(0, arrayComments.length)]
 };
 */
+// --- К пункту 4 задания
+var bigPicture = document.querySelector('.big-picture');
+bigPicture.classList.remove('hidden');
+// --- К пункту 5 задания
+var countComments = document.querySelector('.social__comment-count');
+countComments.classList.add('visually-hidden');
+// ---
+var commentsLoader = document.querySelector('.comments-loader');
+commentsLoader.classList.add('visually-hidden');
+
